@@ -1,5 +1,6 @@
 
-a: aの値自体はメモリを持たず，コンパイラが処理
+a: aの値自体はメモリを持たず，コンパイラが処理  	
+
 | addres | var | content | 
 | --- | --- | --- |
 | 0x7ffeeed5cac8 | a[0], a | A |
@@ -7,7 +8,8 @@ a: aの値自体はメモリを持たず，コンパイラが処理
 | 0x7ffeeed5caca | a[2] | C |
 | 0x7ffeeed5cacb | a[3] | \0 |
 
-ppi: ppi 自体がmallocで確保したメモリ領域への値
+ppi: ppi 自体がmallocで確保したメモリ領域への値  
+
 | addres | var | content |
 | --- | --- | --- |
 | 0x7f8e55400620 | *ppi, ppi[0] | 0 |
@@ -17,5 +19,5 @@ ppi: ppi 自体がmallocで確保したメモリ領域への値
 | ... | ... | ... |
 | 0x7ffeeed5cac0 | ppi | 0x7f8e55400620 |
 
-int **ppi : ポインタへのポインタ変数のため sizeof(ppi) => 8 Byte
-int *ppi[4] : ポインタの配列のため sizeof(ppi) => 32 Byte
+int **ppi : ポインタへのポインタ変数のため sizeof(ppi) => 8 Byte  
+int *ppi[4] : ポインタの配列のため sizeof(ppi) => 32 Byte  
