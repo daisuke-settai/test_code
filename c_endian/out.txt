@@ -1,0 +1,7 @@
+bytes.b4: 12345678
+bytes.b2: 5678, 1234
+bytes.b1: 78, 56, 34, 12
+bytes.b2: 1234
+bytes.b1: 34, 12
+bytes.b2: 3412
+bytes.b1: 12, 34
