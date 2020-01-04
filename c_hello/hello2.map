@@ -2,7 +2,7 @@
 Discarded input sections
 
  .note.GNU-stack
-                0x0000000000000000        0x0 /tmp/ccbywDzs.o
+                0x0000000000000000        0x0 /tmp/ccl3uW5o.o
 
 Memory Configuration
 
@@ -11,7 +11,7 @@ Name             Origin             Length             Attributes
 
 Linker script and memory map
 
-LOAD /tmp/ccbywDzs.o
+LOAD /tmp/ccl3uW5o.o
 LOAD hello.o
                 [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x400000))
                 0x00000000004000e8                . = (SEGMENT_START ("text-segment", 0x400000) + SIZEOF_HEADERS)
@@ -23,7 +23,7 @@ LOAD hello.o
                 0x00000000004000e8       0x24
  *(.note.gnu.build-id)
  .note.gnu.build-id
-                0x00000000004000e8       0x24 /tmp/ccbywDzs.o
+                0x00000000004000e8       0x24 /tmp/ccl3uW5o.o
 
 .hash
  *(.hash)
@@ -57,7 +57,7 @@ LOAD hello.o
  *(.rela.ctors)
  *(.rela.dtors)
  *(.rela.got)
- .rela.got      0x0000000000400110        0x0 /tmp/ccbywDzs.o
+ .rela.got      0x0000000000400110        0x0 /tmp/ccl3uW5o.o
  *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
  *(.rela.ldata .rela.ldata.* .rela.gnu.linkonce.l.*)
  *(.rela.lbss .rela.lbss.* .rela.gnu.linkonce.lb.*)
@@ -68,7 +68,7 @@ LOAD hello.o
  *(.rela.plt)
                 [!provide]                        PROVIDE (__rela_iplt_start = .)
  *(.rela.iplt)
- .rela.iplt     0x0000000000400110        0x0 /tmp/ccbywDzs.o
+ .rela.iplt     0x0000000000400110        0x0 /tmp/ccl3uW5o.o
                 [!provide]                        PROVIDE (__rela_iplt_end = .)
 
 .init
@@ -77,7 +77,7 @@ LOAD hello.o
 .plt            0x0000000000400110        0x0
  *(.plt)
  *(.iplt)
- .iplt          0x0000000000400110        0x0 /tmp/ccbywDzs.o
+ .iplt          0x0000000000400110        0x0 /tmp/ccl3uW5o.o
 
 .plt.got
  *(.plt.got)
@@ -85,19 +85,19 @@ LOAD hello.o
 .plt.sec
  *(.plt.sec)
 
-.text           0x0000000000400110       0x4d
+.text           0x0000000000400110       0x3d
  *(.text.unlikely .text.*_unlikely .text.unlikely.*)
  *(.text.exit .text.exit.*)
  *(.text.startup .text.startup.*)
- .text.startup  0x0000000000400110       0x29 /tmp/ccbywDzs.o
+ .text.startup  0x0000000000400110       0x1c /tmp/ccl3uW5o.o
                 0x0000000000400110                main
  *(.text.hot .text.hot.*)
  *(.text .stub .text.* .gnu.linkonce.t.*)
- .text          0x0000000000400139        0x0 /tmp/ccbywDzs.o
- *fill*         0x0000000000400139        0x7 
- .text          0x0000000000400140       0x1d hello.o
-                0x0000000000400140                hello
-                0x0000000000400153                my_exit
+ .text          0x000000000040012c        0x0 /tmp/ccl3uW5o.o
+ *fill*         0x000000000040012c        0x4 
+ .text          0x0000000000400130       0x1d hello.o
+                0x0000000000400130                hello
+                0x0000000000400143                my_exit
  *(.gnu.warning)
 
 .fini
@@ -106,10 +106,10 @@ LOAD hello.o
                 [!provide]                        PROVIDE (_etext = .)
                 [!provide]                        PROVIDE (etext = .)
 
-.rodata         0x000000000040015d        0xc
+.rodata         0x000000000040014d        0xc
  *(.rodata .rodata.* .gnu.linkonce.r.*)
  .rodata.str1.1
-                0x000000000040015d        0xc /tmp/ccbywDzs.o
+                0x000000000040014d        0xc /tmp/ccl3uW5o.o
 
 .rodata1
  *(.rodata1)
@@ -118,9 +118,10 @@ LOAD hello.o
  *(.eh_frame_hdr)
  *(.eh_frame_entry .eh_frame_entry.*)
 
-.eh_frame       0x0000000000400170       0x30
+.eh_frame       0x0000000000400160       0x2c
  *(.eh_frame)
- .eh_frame      0x0000000000400170       0x30 /tmp/ccbywDzs.o
+ .eh_frame      0x0000000000400160       0x2c /tmp/ccl3uW5o.o
+                                         0x30 (size before relaxing)
  *(.eh_frame.*)
 
 .gcc_except_table
@@ -196,19 +197,19 @@ LOAD hello.o
 
 .got            0x0000000000601000        0x0
  *(.got)
- .got           0x0000000000601000        0x0 /tmp/ccbywDzs.o
+ .got           0x0000000000601000        0x0 /tmp/ccl3uW5o.o
  *(.igot)
                 0x0000000000601000                . = DATA_SEGMENT_RELRO_END (., (SIZEOF (.got.plt) >= 0x18)?0x18:0x0)
 
 .got.plt        0x0000000000601000        0x0
  *(.got.plt)
- .got.plt       0x0000000000601000        0x0 /tmp/ccbywDzs.o
+ .got.plt       0x0000000000601000        0x0 /tmp/ccl3uW5o.o
  *(.igot.plt)
- .igot.plt      0x0000000000601000        0x0 /tmp/ccbywDzs.o
+ .igot.plt      0x0000000000601000        0x0 /tmp/ccl3uW5o.o
 
 .data           0x0000000000601000        0x0
  *(.data .data.* .gnu.linkonce.d.*)
- .data          0x0000000000601000        0x0 /tmp/ccbywDzs.o
+ .data          0x0000000000601000        0x0 /tmp/ccl3uW5o.o
 
 .data1
  *(.data1)
@@ -220,7 +221,7 @@ LOAD hello.o
 .bss            0x0000000000601000        0x0
  *(.dynbss)
  *(.bss .bss.* .gnu.linkonce.b.*)
- .bss           0x0000000000601000        0x0 /tmp/ccbywDzs.o
+ .bss           0x0000000000601000        0x0 /tmp/ccl3uW5o.o
  *(COMMON)
                 0x0000000000601000                . = ALIGN ((. != 0x0)?0x8:0x1)
 
@@ -260,10 +261,10 @@ LOAD hello.o
 .stab.indexstr
  *(.stab.indexstr)
 
-.comment        0x0000000000000000       0x2a
+.comment        0x0000000000000000       0x29
  *(.comment)
- .comment       0x0000000000000000       0x2a /tmp/ccbywDzs.o
-                                         0x2b (size before relaxing)
+ .comment       0x0000000000000000       0x29 /tmp/ccl3uW5o.o
+                                         0x2a (size before relaxing)
 
 .debug
  *(.debug)
