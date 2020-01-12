@@ -1,7 +1,7 @@
 linux:
 	nasm -f elf64 -o hello_asm.o hello_asm.asm
 	gcc -c hello.c -o hello.o
-	ld 
+	ld hello.o hello_asm.o -o hello
 
 linux-hello:
 	nasm -f elf64 -o hello_asm.o hello_asm.asm
