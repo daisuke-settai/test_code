@@ -32,10 +32,27 @@
   #define SYS_WRITE 1
 #endif
 
-//__inline__ gccがこの関数を呼び出し元に展開する
-// __volatile__ 最適化の対象外とする
+/*__inline__ gccがこの関数を呼び出し元に展開する
+ * __volatile__ 最適化の対象外とする
+ *
+ * cld: Direction FlagをClear, esi, ediなどが自動でインクリメントされるようになる
+ * rep: rcxカウンタの数だけ繰り返し実行
+ * movsd: esi -> edi にdouble word(4B) mov
+ *    4B区切りで一気にコピー, 残りは3B以下
+ * test $2, %4: 2とn/4の論理積計算後EFLAGSをセット結果が0ならZF: on
+ * movsw: esi -> edi にsingle word(2B) mov
+ *    nの2bit目が1(4で割って2以上余る)なら2Bコピー
+ *
+ * AT&T記法では定数には$をつけ, レジスタには%(inline時はエスケープのため%%)をつける
+ *
+ * %nはn番目のオペランド
+ * ecxは初期値n/4, デクリメントするため書き込み可とするため
+ * rdiは初期値dest, インクリメントするため書き込み可とするため(esiも同様)
+ * nは読み込みしかしないため"r"で十分
+ * memoryは, destの指すメモリに書き込むため必要
+ */
 static __inline__ void *memcpy(void *dest, const void *src, unsigned int n) {
-  int d0, d1, d2;
+  int d0, d1, d2; // dummy
   __asm__ __volatile__(
       "cld        \n\t"
       "rep movsd  \n\t"
@@ -58,7 +75,7 @@ static __inline__ void *memcpy(void *dest, const void *src, unsigned int n) {
 static __inline__ int write(int fd, const char*str, unsigned int n) {
   int ret;
   __asm__ __volatile__(
-      "syscall                  \t"
+      "syscall\t"
       : "=&a" (ret)
       : "d" (n), "S" (str), "D" (fd), "0" (SYS_WRITE)
       :
